@@ -22,6 +22,6 @@ resource "docker_container" "dc_ado_agent" {
   env = [
     "AZP_URL=$(VAR_AZP_URL)", 
     "AZP_TOKEN=$(VAR_AZP_TOKEN)", 
-    "AZP_POOL=($VAR_AZP_POOL)"
+    "AZP_POOL=$(VAR_AZP_POOL)"
   ]
 }
