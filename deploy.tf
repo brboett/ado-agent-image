@@ -19,9 +19,5 @@ resource "docker_image" "di_ado_agent" {
 resource "docker_container" "dc_ado_agent" {
   name  = "ado_agent"
   image = docker_image.di_ado_agent.image_id
-  env = [
-    "AZP_URL=${AZP_URL}", 
-    "AZP_TOKEN=${AZP_TOKEN}", 
-    "AZP_POOL=${AZP_POOL}"
-  ]
+  env = ["AZP_URL=${AZP_URL}", "AZP_TOKEN=${AZP_TOKEN}", "AZP_POOL=${AZP_POOL}"]
 }
