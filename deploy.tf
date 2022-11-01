@@ -1,3 +1,8 @@
+## Note: To run under Jenkins, add the variables into Jenkins as:
+## TF_VAR_AZP_URL
+## TF_VAR_AZP_TOKEN
+## TF_VAR_AZP_POOL
+
 terraform {
   required_providers {
     docker = {
