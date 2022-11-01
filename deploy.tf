@@ -7,6 +7,21 @@ terraform {
   }
 }
 
+variable "AZP_TOKEN" {  
+  type        = string
+  default     = ""
+}
+
+variable "AZP_URL" {  
+  type        = string
+  default     = ""
+}
+
+variable "AZP_POOL" {  
+  type        = string
+  default     = ""
+}
+
 provider "docker" {
   host = "unix:///var/run/docker.sock"
 }
