@@ -2,6 +2,7 @@
 ## TF_VAR_AZP_URL
 ## TF_VAR_AZP_TOKEN
 ## TF_VAR_AZP_POOL
+## Backend > sudo chmod jenkins:jenkins /var/lib/jenkins/workspace/state
 
 terraform {
   
