@@ -6,7 +6,7 @@
 terraform {
   
   backend "local" {
-    path = "/home/bryan/State/ado_agent/terraform.tfstate"
+    path = "/var/lib/jenkins/workspace/state/ado_agent/terraform.tfstate"
   }
   
   required_providers {
