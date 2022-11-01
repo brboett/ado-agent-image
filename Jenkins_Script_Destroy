@@ -9,6 +9,11 @@ pipeline {
                 git branch: 'main', credentialsId: 'Github', url: 'https://github.com/brboett/ado-agent-image.git'
             }
         }
+        stage('Remove Agent') {
+            steps{
+                sh 'docker container stop ado_agent'
+            }
+        }
         stage('Terraform Format') {
             steps{
                 sh 'terraform fmt'
@@ -19,8 +24,8 @@ pipeline {
                 sh 'terraform init'
             }
         }
-        stage('Terraform Apply') {
-            steps{                
+        stage('Terraform Destroy') {
+            steps{
                 sh 'terraform destroy --auto-approve'
             }
         }
