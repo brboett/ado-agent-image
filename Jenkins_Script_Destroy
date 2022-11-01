@@ -1,0 +1,28 @@
+pipeline {
+    agent any
+    tools {
+      terraform 'Terraform'
+    }
+    stages {
+        stage('Git Checkout') {
+           steps{
+                git branch: 'main', credentialsId: 'Github', url: 'https://github.com/brboett/ado-agent-image.git'
+            }
+        }
+        stage('Terraform Format') {
+            steps{
+                sh 'terraform fmt'
+            }
+        }
+        stage('Terraform Init') {
+            steps{
+                sh 'terraform init'
+            }
+        }
+        stage('Terraform Apply') {
+            steps{                
+                sh 'terraform destroy --auto-approve'
+            }
+        }
+    }
+}
