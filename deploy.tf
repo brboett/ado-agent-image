@@ -4,6 +4,11 @@
 ## TF_VAR_AZP_POOL
 
 terraform {
+  
+  backend "local" {
+    path = "/home/bryan/State/ado_agent/terraform.tfstate"
+  }
+  
   required_providers {
     docker = {
       source  = "kreuzwerker/docker"
