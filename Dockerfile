@@ -14,12 +14,13 @@ RUN DEBIAN_FRONTEND=noninteractive apt-get install -y -qq --no-install-recommend
     lsb-release \
     software-properties-common
 
+# Install Azure CLI
 RUN curl -sL https://aka.ms/InstallAzureCLIDeb | bash
 
 # Can be 'linux-x64', 'linux-arm64', 'linux-arm', 'rhel.6-x64'.
 ENV TARGETARCH=linux-x64
 
-# Install Packer, Terraform
+# Install Packer, Terraform, AWS CLI
 COPY configure.sh /tmp
 RUN cd /tmp && \
     chmod +x configure.sh && \    
