@@ -12,7 +12,7 @@ provider "docker" {
 }
 
 resource "docker_image" "di_ado_agent" {
-  name = "brboettcher/adoagent:latest"
+  name = "registry.hub.docker.com/brboettcher/adoagent:latest"
 }
 
 # Start a container
